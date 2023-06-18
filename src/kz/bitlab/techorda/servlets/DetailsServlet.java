@@ -6,6 +6,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import kz.bitlab.techorda.db.Book;
+import kz.bitlab.techorda.db.DBConnection;
 import kz.bitlab.techorda.db.DBManager;
 
 import java.io.IOException;
@@ -23,7 +24,7 @@ public class DetailsServlet extends HttpServlet {
 
 
 
-         Book book = DBManager.getBook(id);
+         Book book = DBConnection.getBook(id);
          request.setAttribute("book", book);
          request.getRequestDispatcher("/details.jsp").forward(request, response);
     }
