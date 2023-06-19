@@ -5,7 +5,7 @@ public class Book {
     private int id;
     private String name;
     private String genre;
-    private String author;
+    private Author author;
     private double price;
 
     private String description;
@@ -13,7 +13,7 @@ public class Book {
 
     }
 
-    public Book(int id, String name, String genre, String author, double price) {
+    public Book(int id, String name, String genre, Author author, double price) {
         this.id = id;
         this.name = name;
         this.genre = genre;
@@ -21,7 +21,7 @@ public class Book {
         this.price = price;
     }
 
-    public Book(int id, String name, String genre, String author, double price, String description) {
+    public Book(int id, String name, String genre, Author author, double price, String description) {
         this.id = id;
         this.name = name;
         this.genre = genre;
@@ -54,11 +54,11 @@ public class Book {
         this.genre = genre;
     }
 
-    public String getAuthor() {
+    public Author getAuthor() {
         return author;
     }
 
-    public void setAuthor(String author) {
+    public void setAuthor(Author author) {
         this.author = author;
     }
 

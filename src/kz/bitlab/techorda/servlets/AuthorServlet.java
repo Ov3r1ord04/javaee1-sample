@@ -14,14 +14,12 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
-@WebServlet(value = "/home")
-public class HomeServlet extends HttpServlet {
+@WebServlet(value = "/authors")
+public class AuthorServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        ArrayList<Book> books = DBConnection.getBooks();
-        request.setAttribute("books", books);
-
         ArrayList<Author> authors = DBConnection.getAuthors();
         request.setAttribute("avtory", authors);
-        request.getRequestDispatcher("/book.jsp").forward(request, response);
+
+        request.getRequestDispatcher("/authors.jsp").forward(request, response);
     }
 }
